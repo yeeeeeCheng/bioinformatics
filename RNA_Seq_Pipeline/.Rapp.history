@@ -1,0 +1,2909 @@
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+data <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/sheet1.csv")#
+#
+data %>%#
+	filter(Data == "Main_vine_length") %>%#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 2.376, linetype = "dashed")+		#Main_vine_length: 13.46666667, Root_length: 11.86666667, Shoot_fresh_weight: 2.218666667, Root_fresh_weight: 0.15733333, Plant_fresh_weight: 2.376#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 4.5))+		#Main_vine_length: 17; Root_length: 16; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Main vine length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))
+data <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/sheet1.csv")#
+#
+data %>%#
+	filter(Data == "Main_vine_length") %>%#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 10.13333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 12.5))+		#Main_vine_length: 12.5; Root_length: 16; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Main vine length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))
+data <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/sheet1.csv")#
+#
+data %>%#
+	filter(Data == "Main_vine_length") %>%#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 10.13333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 13))+		#Main_vine_length: 12.5; Root_length: 16; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Main vine length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 10.13333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 12.5))+		#Main_vine_length: 12.5; Root_length: 16; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Main vine length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	"Main_vine_length",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 28.64,#
+	height = 9.09,#
+	unit = "cm",#
+	dpi = 320#
+)
+data <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/sheet1.csv")#
+#
+data %>%#
+	filter(Data == "Main_vine_length") %>%#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 10.13333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 12.5))+		#Main_vine_length: 12.5; Root_length: 16; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Main vine length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Main_vine_length",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 28.64,#
+	height = 9.09,#
+	unit = "cm",#
+	dpi = 320#
+)
+data <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/sheet1.csv")#
+#
+data %>%#
+	filter(Data == "Main_vine_length") %>%#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 10.13333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 12.5))+		#Main_vine_length: 12.5; Root_length: 16; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Main vine length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Main_vine_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 28.64,#
+	height = 9.09,#
+	unit = "cm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Main_vine_length") %>%#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 10.13333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 14))+		#Main_vine_length: 14; Root_length: 16; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Main vine length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Main_vine_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_length") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 13, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 22))+		#Main_vine_length: 14; Root_length: 22; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Shoot_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 1.535333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 2.3))+		#Main_vine_length: 14; Root_length: 22; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Shoot fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Shoot_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Shoot_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 1.535333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 2.5))+		#Main_vine_length: 14; Root_length: 22; Shoot_fresh_weight: 4.4; Root_fresh_weight: 0.8; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Shoot fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Shoot_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.215333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 0.6))+		#Main_vine_length: 14; Root_length: 22; Shoot_fresh_weight: 2.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.215333333, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 0.54))+		#Main_vine_length: 14; Root_length: 22; Shoot_fresh_weight: 2.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 4.5,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 1.750666667, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 2.6))+		#Main_vine_length: 14; Root_length: 22; Shoot_fresh_weight: 2.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.6,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 1.750666667, linetype = "dashed")+		#Main_vine_length: 10.13333333, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 2.8))+		#Main_vine_length: 14; Root_length: 22; Shoot_fresh_weight: 2.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.8,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/2nd_trial/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+result <- read.csv('/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/sheet.csv')
+evaluation <- subset(result, Data == "Main_vine_length")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+evaluation <- subset(result, Data == "Root_length")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+evaluation <- subset(result, Data == "Shoot_fresh_weight")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+evaluation <- subset(result, Data == "Root_fresh_weight")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+evaluation <- subset(result, Data == "Plant_fresh_weight")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+data <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/sheet1.csv")#
+#
+data %>%#
+	filter(Data == "Main_vine_length") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 11.8, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 15))+		#Main_vine_length: 15; Root_length: 22; Shoot_fresh_weight: 2.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.7,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Main vine length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Main_vine_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_length") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 12.43333333, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 18.2))+		#Main_vine_length: 15; Root_length: 18.2; Shoot_fresh_weight: 2.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.7,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_length") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 12.43333333, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 18.2))+		#Main_vine_length: 15; Root_length: 18.8; Shoot_fresh_weight: 2.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.7,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_length") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 12.43333333, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 19))+		#Main_vine_length: 15; Root_length: 19; Shoot_fresh_weight: 2.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.7,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_length") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 12.43333333, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.535333333, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 19.2))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 2.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.7,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Shoot_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 1.877, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 3.5))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.7,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Shoot fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Shoot_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Shoot_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 1.877, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.215333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 3.8))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.7,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Shoot fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Shoot_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.186333333, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.186333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 0.6))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.6; Plant_fresh_weight: 2.7,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.186333333, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.186333333, Plant_fresh_weight: 1.750666667#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 0.65))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.65; Plant_fresh_weight: 2.7,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 2.063333333, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.186333333, Plant_fresh_weight: 2.063333333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 4))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.65; Plant_fresh_weight: 4,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+library(tidyverse)
+library(agricolae)
+result <- read.csv('/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/sheet.csv')
+evaluation <- subset(result, Data == "Plant_height")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+evaluation <- subset(result, Data == "Root_length")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+evaluation <- subset(result, Data == "Shoot_fresh_weight")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+evaluation <- subset(result, Data == "Root_fresh_weight")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+evaluation <- subset(result, Data == "Plant_fresh_weight")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+data <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/sheet1.csv")
+data %>%#
+	filter(Data == "Plant_height") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 7, linetype = "dashed")+		#Plant_height: 7, Root_length: , Shoot_fresh_weight: , Root_fresh_weight:, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 10.3))+		#Plant_height: 10.3; Root_length:; Shoot_fresh_weight:; Root_fresh_weight:; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_height.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_height") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 7, linetype = "dashed")+		#Plant_height: 7, Root_length: , Shoot_fresh_weight: , Root_fresh_weight:, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 10.6))+		#Plant_height: 10.3; Root_length:; Shoot_fresh_weight:; Root_fresh_weight:; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_height.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_height") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Mock')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 7, linetype = "dashed")+		#Plant_height: 7, Root_length: , Shoot_fresh_weight: , Root_fresh_weight:, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 12))+		#Plant_height: 10.3; Root_length:; Shoot_fresh_weight:; Root_fresh_weight:; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_height.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_height") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 7, linetype = "dashed")+		#Plant_height: 7, Root_length: , Shoot_fresh_weight: , Root_fresh_weight:, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 11.7))+		#Plant_height: 10.3; Root_length:; Shoot_fresh_weight:; Root_fresh_weight:; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_height.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_height") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 7, linetype = "dashed")+		#Plant_height: 7, Root_length: , Shoot_fresh_weight: , Root_fresh_weight:, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 11.7))+		#Plant_height: 10.3; Root_length:; Shoot_fresh_weight:; Root_fresh_weight:; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_height.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_length") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 8.4, linetype = "dashed")+		#Plant_height: 7, Root_length: 8.4, Shoot_fresh_weight: , Root_fresh_weight:, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 11))+		#Plant_height: 11.7; Root_length:; Shoot_fresh_weight:; Root_fresh_weight:; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_length") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 6.766666667, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: , Root_fresh_weight:, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 11))+		#Plant_height: 11.7; Root_length:; Shoot_fresh_weight:; Root_fresh_weight:; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Shoot_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.433, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: , Root_fresh_weight:, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 1.03))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.03; Root_fresh_weight:; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Shoot_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Shoot_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.433, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: , Root_fresh_weight:, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 1.1))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.03; Root_fresh_weight:; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Shoot_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.010913333, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 0.07))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.07; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.010913333, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight:#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 0.073))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: ,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.443913333, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 1.04))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: 1.04,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.443913333, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 1.1))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: 1.1,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.443913333, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 1.13))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: 1.13,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_height") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 7, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 11.7))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: 1.13,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant height (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_height.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+evaluation <- subset(result, Data == "Plant_height")
+evaluation
+evaluation.lm <- lm(Measurement ~ Treatment, data = evaluation)
+evaluation.lm
+evaluation.av <- aov(evaluation.lm)
+summary(evaluation.av)
+tukey.test <- HSD.test(evaluation.av, trt = 'Treatment')
+tukey.test
+data %>%#
+	filter(Data == "Plant_height") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 7, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 11.7))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: 1.13,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant height (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_height.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/sheet1.csv")#
+#
+data %>%#
+	filter(Data == "Plant_height") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 7, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 11.7))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: 1.13,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant height (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_height.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_length") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 6.766666667, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 11))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: 1.13,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Shoot_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.433, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 1.1))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: 1.13,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Shoot fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Shoot_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.010913333, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 0.073))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.073; Plant_fresh_weight: 1.13,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.010913333, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 0.09))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.09; Plant_fresh_weight: 1.13,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Plant_fresh_weight") %>%#
+#options for Data: Plant_height, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_250x', '1_500x', '1_750x', '2_250x', '2_500x', '2_750x', '3_250x', '3_500x', '3_750x', '4_250x', '4_500x', '4_750x', '5_250x', '5_500x', '5_750x', '6_250x', '6_500x', '6_750x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.443913333, linetype = "dashed")+		#Plant_height: 7, Root_length: 6.766666667, Shoot_fresh_weight: 0.433, Root_fresh_weight: 0.010913333, Plant_fresh_weight: 0.443913333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 1.13))+		#Plant_height: 11.7; Root_length: 11; Shoot_fresh_weight: 1.1; Root_fresh_weight: 0.09; Plant_fresh_weight: 1.13,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+library(tidyverse)
+data1 <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/sheet2.csv")
+ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+	geom_tile()+#
+	scale_fill_gradient2(low = 'blue', mid = 'white', high = 'red', midpoint = 0)
+data1
+data1 %>%#
+	ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient2(low = 'blue', mid = 'white', high = 'red', midpoint = 0)
+data1 %>%#
+	ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient2(low = 'blue', mid = 'white', high = 'red', midpoint = -2)
+data1 %>%#
+	ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient2(low = 'blue', mid = 'white', high = 'red', midpoint = 1)
+data1 %>%#
+	ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient2(low = 'blue', mid = 'white', high = 'red', midpoint = 1.5)
+data1 %>%#
+	ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient2(low = 'blue', mid = 'white', high = 'red', midpoint = 0)+#
+		theme_classic()
+data1 %>%#
+	ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient2(low = 'blue', mid = 'white', high = 'red', midpoint = 0)+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1)
+library(tidyverse)
+data1 <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/sheet2.csv")
+data1 %>%#
+	ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient2(low = 'blue', mid = 'white', high = 'red', midpoint = 0)+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1))
+data1 %>%#
+	ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient2(low = 'red', mid = 'yellow', high = 'green', midpoint = 0)+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+data1 %>%#
+	ggplot(aes(x = Treatment, y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1))
+data1 %>%#
+	ggplot(aes(x = factor(Treatment,level = c('Plant_height', 'Root_length', 'Shoot_fresh_weight', 'Root_fresh_weight', 'Plant_fresh_weight')), y = Data_type, fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_height', 'Root_length', 'Shoot_fresh_weight', 'Root_fresh_weight', 'Plant_fresh_weight')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_height', 'Root_length', 'Shoot_fresh_weight', 'Root_fresh_weight', 'Plant_fresh_weight')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Plant_height')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Plant_height')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(vars(Data_type), vars(Treatment))+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+data1 <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/sheet2.csv")#
+#
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Plant_height')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(~Formulation, scale = "free_x", space = "free")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Plant_height')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(~Formulation, scale = "free_x", space = "free")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Plant_height')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(~Formulation, scale = "free_x", space = "free")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Plant_height')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(~Formulation, scale = "free_x", space = "free")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))#
+#
+ggsave(#
+	file = "Fold_change.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Plant_height')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(~Formulation, scale = "free_x", space = "free")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))#
+#
+ggsave(#
+	file = "Fold_change.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 300,#
+	height = 80,#
+	unit = "mm",#
+	dpi = 320#
+)
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Plant_height')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(~Formulation, scale = "free_x", space = "free")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))#
+#
+ggsave(#
+	file = "Fold_change.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 320,#
+	height = 80,#
+	unit = "mm",#
+	dpi = 320#
+)
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Plant_height')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(~Formulation, scale = "free_x", space = "free")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))#
+#
+ggsave(#
+	file = "Fold_change.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Bok_choy/Merged/",#
+	width = 320,#
+	height = 82,#
+	unit = "mm",#
+	dpi = 320#
+)
+data1 <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/sheet2.csv")#
+#
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data_type, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Main_vine_length')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(~Formulation, scale = "free_x", space = "free")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))#
+#
+ggsave(#
+	file = "Fold_change.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 320,#
+	height = 82,#
+	unit = "mm",#
+	dpi = 320#
+)
+#Plot heatmap of FCs of different data types#
+data1 <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/sheet2.csv")#
+#
+data1 %>%#
+	ggplot(aes(x = Treatment, y = factor(Data, level = c('Plant_fresh_weight', 'Root_fresh_weight', 'Shoot_fresh_weight', 'Root_length', 'Main_vine_length')), fill = FC))+#
+		geom_tile()+#
+		scale_fill_gradient(low = 'blue', high = 'red')+#
+		labs(x = "Treatment",#
+		 	 y = "Growth parameter")+#
+		facet_grid(~Formulation, scale = "free_x", space = "free")+#
+		theme_classic()+#
+		theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))#
+#
+ggsave(#
+	file = "Fold_change.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 320,#
+	height = 82,#
+	unit = "mm",#
+	dpi = 320#
+)
+library(tidyverse)
+data <- read.csv("/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/sheet1.csv")
+data %>%#
+	filter(Data == "Plant_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 2.063333333, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.186333333, Plant_fresh_weight: 2.063333333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 4))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.65; Plant_fresh_weight: 4,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Plant fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Plant_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Main_vine_length") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 11.8, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.186333333, Plant_fresh_weight: 2.063333333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 15))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.65; Plant_fresh_weight: 4,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Main vine length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Main_vine_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_length") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 13, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.186333333, Plant_fresh_weight: 2.063333333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 19.2))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.65; Plant_fresh_weight: 4,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root length (cm)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_length.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Shoot_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 1.877, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.186333333, Plant_fresh_weight: 2.063333333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 3.5))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.65; Plant_fresh_weight: 4,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Shoot fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Shoot_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+data %>%#
+	filter(Data == "Root_fresh_weight") %>%#
+#options for Data: Main_vine_length, Root_length, Shoot_fresh_weight, Root_fresh_weight, Plant_fresh_weight#
+ggplot(aes(x = factor(Treatment, level = c('1_100x', '1_250x', '1_500x', '2_100x', '2_250x', '2_500x', '3_100x', '3_250x', '3_500x', '4_100x', '4_250x', '4_500x', '5_100x', '5_250x', '5_500x', '6_100x', '6_250x', '6_500x', 'POP-1_250x', 'POP-2_250x', 'KWF-02_200x', 'Hyponex-2_1000x', 'Control')), y = Average, fill = Formulation))+#
+	geom_col(width = 0.75, show.legend = FALSE, aes(alpha = Dilution_factor))+#
+	geom_col(width = 0.75, color = "black", linewidth = 0.8, aes(alpha = Dilution_factor))+#
+	geom_hline(yintercept = 0.186333333, linetype = "dashed")+		#Main_vine_length: 11.8, Root_length: 13, Shoot_fresh_weight: 1.877, Root_fresh_weight: 0.186333333, Plant_fresh_weight: 2.063333333#
+	geom_text(aes(label = Tukey, y = Average + Standard_deviation), size = 3, vjust = -1, fontface = "bold")+#
+	geom_errorbar(aes(ymax = Average + Standard_deviation, ymin = Average - Standard_deviation), width = 0.2, linewidth = 0.8)+#
+	coord_cartesian(ylim = c(0, 0.65))+		#Main_vine_length: 15; Root_length: 19.2; Shoot_fresh_weight: 3.5; Root_fresh_weight: 0.65; Plant_fresh_weight: 4,#
+	facet_grid(~Formulation, scale = "free_x", space = "free")+#
+	labs(x = "Treatment",#
+		 y = "Root fresh weight (g)")+#
+	scale_fill_manual(values = c("#ea3323", "#ff8b00", "#febb26", "#1eb253", "#017cf3", "#9c78fe", "#000000", "#454c53", "#9ea4aa", "#e8ebed", "#ffffff"))+#
+	scale_alpha_manual(values = c(1, 1, 0.3, 0.05), guide = 'none')+#
+	theme_classic()+#
+	theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  strip.clip = "off",#
+		  strip.background = element_rect(color = "white"),#
+		  strip.text = element_text(face = 2))+#
+	guides(fill = guide_legend(nrow = 1))#
+#
+ggsave(#
+	file = "Root_fresh_weight.pdf",#
+	device = "pdf",#
+	path = "/Users/yeecheng/Documents/DES/Assay_of_Toxicity_and_Plant_Growth_Promotion/Watermelon/Merged/",#
+	width = 286.4,#
+	height = 90.9,#
+	unit = "mm",#
+	dpi = 320#
+)
+library(DESeq2)
+if (!require("BiocManager", quietly = TRUE))#
+    install.packages("BiocManager")#
+#
+BiocManager::install("DESeq2")
+library(DESeq2)
+library(tidyverse)
+counts_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/PRJNA604472_FR_counts_matrix_delimited.csv')
+head(counts_data)
+counts_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/PRJNA604472_FR_counts_matrix_original.csv')
+head(counts_data)
+counts_data <- read.csv('/Users/yeecheng/Desktop/PRJNA604472_FR_counts_matrix_original.csv')
+head(counts_data)
+counts_data <- read.csv('/Users/yeecheng/Desktop/PRJNA604472_FR_counts_matrix_original.csv')
+head(counts_data)
+col_Data <- read.csv('/Users/yeecheng/Desktop/PRJNA604472_FR_sample_data.csv')
+col_Data
+all(colnames(counts_data) %in% rownames(col_Data))
+counts_data <- read.csv('/Users/yeecheng/Desktop/PRJNA604472_FR_counts_matrix_original.csv')
+head(counts_data)
+col_Data <- read.csv('/Users/yeecheng/Desktop/PRJNA604472_FR_sample_data.csv')
+col_Data
+all(colnames(counts_data) %in% rownames(col_Data))
+counts_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Qunatification/PRJNA604472_FR_counts_matrix.csv')
+counts_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/PRJNA604472_FR_counts_matrix.csv')
+head(counts_data)
+col_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/PRJNA604472_FR_sample_data.csv')
+col_data
+all(colnames(counts_data) %in% rownames(col_Data))
+all(colnames(counts_data) %in% rownames(col_data))
+counts_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/PRJNA604472_FR_counts_matrix.csv')
+head(counts_data)
+col_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/PRJNA604472_FR_sample_data.csv')
+col_data
+all(colnames(counts_data) %in% rownames(col_data))
+all(rownames(col_data) %in% colnames(counts_data))
+library(Rsubread)
+setwd("/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline")
+featureCounts(files = c("results/Aligned/FR/SRR11002533.bam", "results/Aligned/FR/SRR11002534.bam", "results/Aligned/FR/SRR11002535.bam", "results/Aligned/FR/SRR11002536.bam", "results/Aligned/FR/SRR11002537.bam", "results/Aligned/FR/SRR11002538.bam", "results/Aligned/FR/SRR11002539.bam", "results/Aligned/FR/SRR11002540.bam"), annot.ext = "/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Indices/Oryza_sativa.IRGSP-1.0.60/References/Oryza_sativa.IRGSP-1.0.60.gtf", isGTFAnnotationFile = TRUE, GTF.featureType="exon", GTF.attrType="gene_id", isPairedEnd = TRUE)
+featureCounts(files = c("results/Aligned/FR/SRR11002533_FR.bam", "results/Aligned/FR/SRR11002534_FR.bam", "results/Aligned/FR/SRR11002535_FR.bam", "results/Aligned/FR/SRR11002536_FR.bam", "results/Aligned/FR/SRR11002537_FR.bam", "results/Aligned/FR/SRR11002538_FR.bam", "results/Aligned/FR/SRR11002539_FR.bam", "results/Aligned/FR/SRR11002540_FR.bam"), annot.ext = "/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Indices/Oryza_sativa.IRGSP-1.0.60/References/Oryza_sativa.IRGSP-1.0.60.gtf", isGTFAnnotationFile = TRUE, GTF.featureType="exon", GTF.attrType="gene_id", isPairedEnd = TRUE)
+#Step 1. Prepare counts data and metadata of the samples and transform it into the format that can be processed by DESeq2#
+#
+library(tidyverse)#
+#
+#counts data#
+counts_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/Melon/Melon_count_matrix.csv', skip = 1, header = TRUE) #because the content of the count matrix contains some basic information of that run in the first row, but without neglecting R won't function properly as there are more columns than the column name. The attribute "header = FALSE" can omit the first row and keep this function working properly.#
+head(counts_data) #take a view of the first few rows in the dataframe counts_data#
+#
+counts_data_modified <- counts_data %>%#
+	rename(C1 = "C1_FR.bam",#
+		   C2 = "C2_FR.bam",#
+		   C3 = "C3_FR.bam",#
+		   T1 = "T1_FR.bam",#
+		   T2 = "T2_FR.bam",#
+		   T3 = "T3_FR.bam") %>%#
+	remove_rownames %>%#
+	column_to_rownames(var = "Geneid")#
+head(counts_data_modified)#
+#rename the columns into the SRR accession numbers, then replace all the prefix "gene:" with "" in the column Geneid, then delete the default rownames of the dataframe counts_data_modified, and add the new row names with the values in the column Geneid without the title
+colnames(counts_data_modified)#
+#confirm the column names of the dataframe counts_data_modified_2. if everything's right, the output should be the SRR accession numbers
+#metadata#
+col_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/Melon/Melon_sample_data.csv')#
+#this table might need to be create manually#
+col_data#
+#
+col_data_modified <- col_data %>%#
+	remove_rownames %>%#
+	column_to_rownames(var = "sample")#
+col_data_modified#
+#
+col_data_modified$treatment <- factor(col_data_modified$treatment, levels = c("Treated", "Control"))#
+col_data_modified$treatment#
+#
+#again, we remove the default row names and replace them with the values in the first column#
+#
+#Make sure the row names in the col_Data matches to the column names in counts_data, if the return value is TRUE, then we can proceed to the DESeq2 step.#
+all(rownames(col_data_modified) %in% colnames(counts_data_modified))#
+all(rownames(col_data_modified) == colnames(counts_data_modified))
+library(DESeq2)#
+library(fdrtool)#
+#
+dds <- DESeqDataSetFromMatrix(countData = counts_data_modified,#
+							  colData = col_data_modified,#
+							  design = ~ treatment)#
+#It's normal that R console might return a warning message saying that "some variables in design formula are characters, converting to factors". Since it;'s just a warning sign, it just tell us that this thing happened.#
+dds#
+#
+#Pre-filter the genes that have counts fewer than 10, which is a recommended value proposed by the official.#
+keep <- rowSums(counts(dds)) >= 10#
+dds <- dds[keep,]#
+dds#
+#In our case of study, the dimension of the table decrease almost 10000 of the rows#
+#
+dds$treatment <- factor(dds$treatment, levels = c("Control", "Treatment"))#
+dds$treatment <- relevel(dds$treatment, ref = "Control")#
+#
+#Run DESeq2#
+dds <- DESeq(dds)#
+res <- results(dds)#
+res#
+summary(res)
+colData(dds)
+dds$treatment <- factor(dds$treatment, levels = c("Control", "Treated"))#
+dds$treatment <- relevel(dds$treatment, ref = "Control")#
+#
+#Run DESeq2#
+dds <- DESeq(dds)#
+res <- results(dds)#
+res#
+summary(res)
+library(org.Cmelo.eg.db)
+head(org.Cmelo.eg.db)
+org.Cmelo.eg.db
+help('select')
+columns(org.Cmelo.eg.db)
+#Step 1. Prepare counts data and metadata of the samples and transform it into the format that can be processed by DESeq2.#
+#
+library(tidyverse)#
+#
+#Import the count matrix. Because the count matrix contains some basic information of that run in the first row that are not required for the following analysis, the attributes "skip = 1" can remove the first row whilte the attribute "header = FALSE" set the values in the second row as the column names.#
+#
+counts_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/USDA_Cmelo_AY_1.0/GCF_025177605.1_USDA_Cmelo_AY_1.0_count_matrix.csv', skip = 1, header = TRUE)#
+#
+#Preview the first few rows in the dataframe counts_data#
+#
+head(counts_data)#
+#
+#Rename each column name. Only the codes of the samples were left, others are removed with the rename function. The function "remove_rownames" can delete the defalut row names (e.g. 1, 2, 3, 4, 5, 6, ... in this case). Once the default row names were removed, the values in the first column was set as the new row names while its column name would be removed.#
+#
+counts_data_modified <- counts_data %>%#
+	rename(CK21 = "CK21_FR.bam",#
+		   CK22-1 = "CK22-1_FR.bam",#
+		   CK22-2 = "CK22-2_FR.bam",#
+		   CK23 = "CK23_FR.bam",#
+		   T21 = "T21_FR.bam",#
+		   T22 = "T22_FR.bam",#
+		   T23 = "T23_FR.bam",#
+		   T24 = "T24_FR.bam") %>%#
+	remove_rownames %>%#
+	column_to_rownames(var = "Geneid")#
+head(counts_data_modified)#
+#
+#Confirm the column names of the dataframe counts_data_modified. The order of the sample names must be in accordance with the sample names provided in the metadata.#
+#
+colnames(counts_data_modified)#
+#
+#Import the sample metadata. The table can be created manually in the terminal.#
+#
+col_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/USDA_Cmelo_AY_1.0/Melon_sample_data.csv')#
+col_data#
+#
+#Adjust the appearance of the metadata table as described above.#
+#
+col_data_modified <- col_data %>%#
+	remove_rownames %>%#
+	column_to_rownames(var = "sample")#
+col_data_modified#
+#
+#To confirm the level in the factor "treatment", the function "factor" can help us to declare each level in the factor.#
+#
+col_data_modified$treatment <- factor(col_data_modified$treatment, levels = c("Treated", "Control"))#
+col_data_modified$treatment#
+#
+#Make sure the row names in the col_data matches to the column names in counts_data_modified, if both the return values are TRUE, then we can proceed to Step 2.#
+#
+all(rownames(col_data_modified) %in% colnames(counts_data_modified))#
+all(rownames(col_data_modified) == colnames(counts_data_modified))
+counts_data_modified <- counts_data %>%#
+	rename(CK21 = "CK21_FR.bam",#
+		   CK22_1 = "CK22.1_FR.bam",#
+		   CK22_2 = "CK22.2_FR.bam",#
+		   CK23 = "CK23_FR.bam",#
+		   T21 = "T21_FR.bam",#
+		   T22 = "T22_FR.bam",#
+		   T23 = "T23_FR.bam",#
+		   T24 = "T24_FR.bam") %>%#
+	remove_rownames %>%#
+	column_to_rownames(var = "Geneid")#
+head(counts_data_modified)#
+#
+#Confirm the column names of the dataframe counts_data_modified. The order of the sample names must be in accordance with the sample names provided in the metadata.#
+#
+colnames(counts_data_modified)
+col_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/USDA_Cmelo_AY_1.0/Melon_sample_data.csv')#
+col_data#
+#
+#Adjust the appearance of the metadata table as described above.#
+#
+col_data_modified <- col_data %>%#
+	remove_rownames %>%#
+	column_to_rownames(var = "sample")#
+col_data_modified#
+#
+#To confirm the level in the factor "treatment", the function "factor" can help us to declare each level in the factor.#
+#
+col_data_modified$treatment <- factor(col_data_modified$treatment, levels = c("Treated", "Control"))#
+col_data_modified$treatment#
+#
+#Make sure the row names in the col_data matches to the column names in counts_data_modified, if both the return values are TRUE, then we can proceed to Step 2.#
+#
+all(rownames(col_data_modified) %in% colnames(counts_data_modified))#
+all(rownames(col_data_modified) == colnames(counts_data_modified))
+col_data <- read.csv('/Users/yeecheng/Bioinformatics/RNA_Seq_Pipeline/results/Quantification/USDA_Cmelo_AY_1.0/Melon_sample_data.csv')#
+col_data#
+#
+#Adjust the appearance of the metadata table as described above.#
+#
+col_data_modified <- col_data %>%#
+	remove_rownames %>%#
+	column_to_rownames(var = "sample")#
+col_data_modified#
+#
+#To confirm the level in the factor "treatment", the function "factor" can help us to declare each level in the factor.#
+#
+col_data_modified$treatment <- factor(col_data_modified$treatment, levels = c("Treated", "Control"))#
+col_data_modified$treatment#
+#
+#Make sure the row names in the col_data matches to the column names in counts_data_modified, if both the return values are TRUE, then we can proceed to Step 2.#
+#
+all(rownames(col_data_modified) %in% colnames(counts_data_modified))#
+all(rownames(col_data_modified) == colnames(counts_data_modified))
+library(DESeq2)#
+library(ggtext)#
+library(scales)#
+library(cowplot)#
+#
+dds <- DESeqDataSetFromMatrix(countData = counts_data_modified,#
+							  colData = col_data_modified,#
+							  design = ~ treatment)#
+dds#
+#It's normal that the console might return a warning message saying that "some variables in design formula are characters, converting to factors". Since it's just a warning sign, it just tell us that this thing happened.#
+#
+#It's important to tell DESeq2 which group serves as the control. Here, the function "relevel" was used to get this done. The line with the function "factor" tries to do the same thing to announce the levels in the factor "treatment". Yet, since we have already done this in Step. 1, maybe this line can be omitted. I don't remember any question arise when this line was omitted.#
+#
+dds$treatment <- factor(dds$treatment, levels = c("Control", "Treated"))#
+dds$treatment <- relevel(dds$treatment, ref = "Control")#
+#
+#Pre-filter the genes that have counts fewer than 10, which is a recommended cut-off threshold proposed by the official.#
+#
+keep <- rowSums(counts(dds)) >= 10#
+dds <- dds[keep,]#
+dds#
+#
+#In our case of study, the dimension of the table decrease almost 10000 of the rows#
+#
+#Run DESeq2#
+#
+dds <- DESeq(dds)#
+res <- results(dds)#
+res#
+summary(res)
+res05 <- results(dds, alpha = 0.05)#
+res05#
+summary(res05)#
+res05_df <- as.data.frame(res05)
+res05_df$diffexpressed <- "Non-DEGs"#
+#If log2Foldchange > 1 (FoldChange > 2) and padj < 0.05, set as "UP" #
+res05_df$diffexpressed[res05_df$log2FoldChange > 1 & res05_df$padj < 0.05] <- "Upregulated"#
+# if log2Foldchange (FoldChange < 1/2) < -1 and padj < 0.05, set as "DOWN"#
+res05_df$diffexpressed[res05_df$log2FoldChange < -1 & res05_df$padj < 0.05] <- "Downregulated"#
+#
+#Tags for the MA plot, yet the significance level of MA plot was set as 0.1. Whether are we going to use the value 0.1 as the significance level should be confirmed with PI.#
+res05_df$MASigs <- "MA-Non_Sigs"#
+res05_df$MASigs[res05_df$padj < 0.1] <- "MA_Sigs"#
+#
+#Assign the colors for volcano plot to the corresponding data according to the tags#
+mycolors_Vol <- c("darkgoldenrod1", "black", "deepskyblue2")#
+names(mycolors_Vol) <- c("Upregulated", "Non-DEGs", "Downregulated")#
+#
+# Re-plot but this time color the points with "diffexpressed"#
+res05_df %>%#
+	ggplot(aes(x=log2FoldChange, y=-log10(padj), col=diffexpressed))+#
+	geom_point(alpha = 0.5)+#
+	geom_vline(xintercept = c(-1, 1), col="gray", linetype = "dashed")+#
+    geom_hline(yintercept = 1.301, col="gray", linetype = "dashed")+#
+    xlim(-8, 8)+#
+    ylim(0, 20)+#
+    xlab("log<sub>2</sub>FC")+#
+    ylab("-log<sub>10</sub>padj")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_Vol)+#
+	theme_classic()+#
+	theme(axis.title.x = element_markdown(),#
+		  axis.title.y = element_markdown(),#
+		  axis.text.x = element_text(hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+res05_df %>%#
+	ggplot(aes(x=log2FoldChange, y=-log10(padj), col=diffexpressed))+#
+	geom_point(alpha = 0.5)+#
+	geom_vline(xintercept = c(-1, 1), col="gray", linetype = "dashed")+#
+    geom_hline(yintercept = 1.301, col="gray", linetype = "dashed")+#
+    xlim(-8, 8)+#
+    ylim(0, 20)+#
+    xlab("log<sub>2</sub>FC")+#
+    ylab("-log<sub>10</sub>p-adj")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_Vol)+#
+	theme_classic()+#
+	theme(axis.title.x = element_markdown(),#
+		  axis.title.y = element_markdown(),#
+		  axis.text.x = element_text(hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+res05_df %>%#
+	ggplot(aes(x=log2FoldChange, y=-log10(padj), col=diffexpressed))+#
+	geom_point(alpha = 0.5)+#
+	geom_vline(xintercept = c(-1, 1), col="gray", linetype = "dashed")+#
+    geom_hline(yintercept = 1.301, col="gray", linetype = "dashed")+#
+    xlim(-8, 8)+#
+    ylim(0, 20)+#
+    xlab("log<sub>2</sub>FC")+#
+    ylab("-log<sub>10</sub>p-adj")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_Vol)+#
+	theme_classic()+#
+	theme(axis.title.x = element_markdown(),#
+		  axis.title.y = element_markdown(),#
+		  axis.text.x = element_text(hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "inside",#
+		  legend.position.inside = c(0.1, 0.7),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+res05_df %>%#
+	ggplot(aes(x=log2FoldChange, y=-log10(padj), col=diffexpressed))+#
+	geom_point(alpha = 0.5)+#
+	geom_vline(xintercept = c(-1, 1), col="gray", linetype = "dashed")+#
+    geom_hline(yintercept = 1.301, col="gray", linetype = "dashed")+#
+    xlim(-8, 8)+#
+    ylim(0, 20)+#
+    xlab("log<sub>2</sub>FC")+#
+    ylab("-log<sub>10</sub>p-adj")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_Vol)+#
+	theme_classic()+#
+	theme(axis.title.x = element_markdown(),#
+		  axis.title.y = element_markdown(),#
+		  axis.text.x = element_text(hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "inside",#
+		  legend.position.inside = c(0.2, 0.85),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+res05_df %>%#
+	ggplot(aes(x=log2FoldChange, y=-log10(padj), col=diffexpressed))+#
+	geom_point(alpha = 0.5)+#
+	geom_vline(xintercept = c(-1, 1), col="gray", linetype = "dashed")+#
+    geom_hline(yintercept = 1.301, col="gray", linetype = "dashed")+#
+    xlim(-8, 8)+#
+    ylim(0, 20)+#
+    xlab("log<sub>2</sub>FC")+#
+    ylab("-log<sub>10</sub>p-adj")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_Vol)+#
+	theme_classic()+#
+	theme(axis.title.x = element_markdown(),#
+		  axis.title.y = element_markdown(),#
+		  axis.text.x = element_text(hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "inside",#
+		  legend.position.inside = c(0.15, 0.85),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+mycolors_MA <- c("black", "deepskyblue2")#
+names(mycolors_MA) <- c("MA-Non_Sigs", "MA-Sigs")#
+#
+#MA plot powered by ggplot2#
+res05_df %>%#
+	ggplot(aes(x = baseMean, y = log2FoldChange, col = MASigs))+#
+	geom_point(alpha = 0.5)+#
+    geom_hline(yintercept = 0, col="darkgray", linetype = "dashed")+#
+    ylim(-23, 23)+#
+    xlab("Mean of normalizaed counts")+#
+    ylab("log<sub>2</sub>FC")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_MA)+#
+	scale_x_continuous(trans = "log10", n.breaks = 6)+#
+	theme_classic()+#
+	theme(axis.title.y = element_markdown(),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+head(res05_df)
+res05_df$MASigs <- "MA-Non_Sigs"#
+res05_df$MASigs[res05_df$padj < 0.05] <- "MA_Sigs"
+mycolors_MA <- c("black", "deepskyblue2")#
+names(mycolors_MA) <- c("MA-Non_Sigs", "MA-Sigs")#
+#
+#MA plot powered by ggplot2#
+res05_df %>%#
+	ggplot(aes(x = baseMean, y = log2FoldChange, col = MASigs))+#
+	geom_point(alpha = 0.5)+#
+    geom_hline(yintercept = 0, col="darkgray", linetype = "dashed")+#
+    ylim(-10, 10)+#
+    xlab("Mean of normalizaed counts")+#
+    ylab("log<sub>2</sub>FC")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_MA)+#
+	scale_x_continuous(trans = "log10", n.breaks = 6)+#
+	theme_classic()+#
+	theme(axis.title.y = element_markdown(),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+plotMA(res05, ylim = c(-23, 23))
+res05_df
+mycolors_MA <- c("black", "deepskyblue2")#
+names(mycolors_MA) <- c("MA-Non_Sigs", "MA_Sigs")#
+#
+#MA plot powered by ggplot2#
+res05_df %>%#
+	ggplot(aes(x = baseMean, y = log2FoldChange, col = MASigs))+#
+	geom_point(alpha = 0.5)+#
+    geom_hline(yintercept = 0, col="darkgray", linetype = "dashed")+#
+    ylim(-10, 10)+#
+    xlab("Mean of normalizaed counts")+#
+    ylab("log<sub>2</sub>FC")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_MA)+#
+	scale_x_continuous(trans = "log10", n.breaks = 6)+#
+	theme_classic()+#
+	theme(axis.title.y = element_markdown(),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+res05_df %>%#
+	ggplot(aes(x = baseMean, y = log2FoldChange, col = MASigs))+#
+	geom_point(alpha = 0.5)+#
+    geom_hline(yintercept = 0, col="darkgray", linetype = "dashed")+#
+    ylim(-7, 7)+#
+    xlab("Mean of normalizaed counts")+#
+    ylab("log<sub>2</sub>FC")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_MA)+#
+	scale_x_continuous(trans = "log10", n.breaks = 6)+#
+	theme_classic()+#
+	theme(axis.title.y = element_markdown(),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+write.csv(res05_df, "/Users/yeecheng/desktop/res05_df.csv")
+res05_df %>%#
+	ggplot(aes(x=log2FoldChange, y=-log10(padj), col=diffexpressed))+#
+	geom_point(alpha = 0.5)+#
+	geom_vline(xintercept = c(-1, 1), col="gray", linetype = "dashed")+#
+    geom_hline(yintercept = 1.301, col="gray", linetype = "dashed")+#
+    xlim(-7, 7)+#
+    ylim(0, 38)+#
+    xlab("log<sub>2</sub>FC")+#
+    ylab("-log<sub>10</sub>p-adj")+#
+    labs(color = "Types")+#
+    scale_color_manual(values = mycolors_Vol)+#
+	theme_classic()+#
+	theme(axis.title.x = element_markdown(),#
+		  axis.title.y = element_markdown(),#
+		  axis.text.x = element_text(hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.line = element_line(linewidth = 0.8),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "inside",#
+		  legend.position.inside = c(0.15, 0.85),#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2))
+vsd <- vst(dds, blind=FALSE)#
+rld <- rlog(dds, blind=FALSE)#
+head(assay(vsd), 3)#
+plotPCA(vsd, intgroup=c("treatment"))
+pcaData <- plotPCA(vsd, intgroup=c("treatment"), returnData=TRUE)#
+percentVar <- round(100 * attr(pcaData, "percentVar"))#
+ggplot(pcaData, aes(PC1, PC2, color = treatment))+#
+	geom_point(size = 3)+#
+	geom_hline(yintercept = 0, col="black", linetype = "dashed", linewidth = 0.8)+#
+	geom_vline(xintercept = 0, col="black", linetype = "dashed", linewidth = 0.8)+#
+	xlab(paste0("PC1: ",percentVar[1],"% variance"))+#
+	ylab(paste0("PC2: ",percentVar[2],"% variance"))+#
+	labs(color = "Treatment")+#
+	theme(axis.text.x = element_text(hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "right",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  legend.key = element_rect(fill = "white", colour = "white"),#
+		  panel.background = element_rect(fill = "white", colour = "black"),#
+		  panel.border = element_rect(linetype = "solid", fill = NA, linewidth = 1))+#
+	coord_fixed()
+pcaData <- plotPCA(vsd, intgroup=c("treatment"), returnData=TRUE)#
+percentVar <- round(100 * attr(pcaData, "percentVar"))#
+ggplot(pcaData, aes(PC1, PC2, color = treatment))+#
+	geom_point(size = 3)+#
+	geom_hline(yintercept = 0, col="black", linetype = "dashed", linewidth = 0.8)+#
+	geom_vline(xintercept = 0, col="black", linetype = "dashed", linewidth = 0.8)+#
+	xlab(paste0("PC1: ",percentVar[1],"% variance"))+#
+	ylab(paste0("PC2: ",percentVar[2],"% variance"))+#
+	labs(color = "Treatment")+#
+	theme(axis.text.x = element_text(hjust = 1, vjust = 1),#
+		  axis.text = element_text(color = "#000000", face = 2),#
+		  axis.ticks = element_line(linewidth = 0.8),#
+		  axis.title = element_text(face = 2),#
+		  legend.position = "bottom",#
+		  legend.title = element_text(face = 2),#
+		  legend.text = element_text(face = 2),#
+		  legend.key = element_rect(fill = "white", colour = "white"),#
+		  panel.background = element_rect(fill = "white", colour = "black"),#
+		  panel.border = element_rect(linetype = "solid", fill = NA, linewidth = 1))+#
+	coord_fixed()
