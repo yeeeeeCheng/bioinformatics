@@ -1,0 +1,12 @@
+sample,trt,pathogen,application
+Mock_2,Mock,N,N
+Mock_3,Mock,N,N
+I_1,I,P,N
+I_2,I,P,N
+I_3,I,P,N
+T_1,T,N,P
+T_2,T,N,P
+T_3,T,N,P
+T_I_1,T_I,P,P
+T_I_2,T_I,P,P
+T_I_3,T_I,P,P
